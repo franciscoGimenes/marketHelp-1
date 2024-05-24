@@ -1,0 +1,37 @@
+{
+  "expo": {
+    "name": "marketHelpApp",
+    "slug": "marketHelpApp",
+    "version": "1.0.2",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/SplashScreen.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#FEC133"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/icon.png",
+        "backgroundColor": "#ffffff",
+        "versionCode":3
+      },
+      "package": "com.joaovitorlira.marketHelpApp"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-font"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "0ef99b64-51b1-41c6-9f3a-9be4a7b2e8ff"
+      }
+    }
+  }
+}
