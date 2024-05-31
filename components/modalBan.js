@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Modal, TextInput } from 'react-native';
 import { BlurView } from 'expo-blur';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { useFonts } from 'expo-font';
 
 import AsyncStorage from '@react-native-async-storage/async-storage'
 
@@ -12,6 +13,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage'
 export function ModalBan({ fechar, visivel }) {
 
 
+    useFonts({ 'Gobold': require('../assets/fonts/Gobold Regular.otf') });
 
 
     async function mudarPagComprar() {
@@ -31,7 +33,7 @@ export function ModalBan({ fechar, visivel }) {
                     </TouchableOpacity>
                     <Text style={styles.modalTitulo}>Você quer apagar toda a compra?</Text>
                     <TouchableOpacity style={styles.botao} onPress={mudarPagComprar}>
-                        <Text style={styles.textoBotao}>Sim</Text>
+                        <Text style={styles.textoBotao}>sim</Text>
                         <Icon name="check" size={20} color="#404E4D" />
                     </TouchableOpacity>
                 </View>
@@ -77,7 +79,7 @@ const styles = StyleSheet.create({
       },
       textoBotao: {
         color: '#404E4D',
-        fontWeight: 'bold',
         marginRight: 5,
-      },
+        fontFamily: 'Gobold'
+    },
 });

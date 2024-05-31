@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Modal, TextInput } from 'react-native';
 import { BlurView } from 'expo-blur';
 import Icon from 'react-native-vector-icons/FontAwesome';
-
+import { useFonts } from 'expo-font';
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { useNavigation } from '@react-navigation/native';
 
@@ -12,6 +12,8 @@ import { useNavigation } from '@react-navigation/native';
 export function ModalAviso({ fechar, visivel }) {
 
     const navigation = useNavigation()
+
+    useFonts({ 'Gobold': require('../assets/fonts/Gobold Regular.otf') });
 
 
     async function mudarPagComprar() {
@@ -32,7 +34,7 @@ export function ModalAviso({ fechar, visivel }) {
                     </TouchableOpacity>
                     <Text style={styles.modalTitulo}>Você tem certeza que deseja começar uma nova compra? Sua compra em andamento será apagada</Text>
                     <TouchableOpacity style={styles.botao} onPress={mudarPagComprar}>
-                        <Text style={styles.textoBotao}>Sim</Text>
+                        <Text style={styles.textoBotao}>sim</Text>
                         <Icon name="check" size={20} color="#404E4D" />
                     </TouchableOpacity>
                 </View>
@@ -75,10 +77,10 @@ const styles = StyleSheet.create({
         backgroundColor: '#FFC030',
         borderRadius: 5,
         padding: 10,
-      },
-      textoBotao: {
+    },
+    textoBotao: {
         color: '#404E4D',
-        fontWeight: 'bold',
         marginRight: 5,
-      },
+        fontFamily: 'Gobold'
+    },
 });

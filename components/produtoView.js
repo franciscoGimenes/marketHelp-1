@@ -6,6 +6,7 @@ export function CaixaToken({ token, valor, removerToken, qtde }) {
     return (
 
 
+
         <View style={styles.BotaoAnterior}>
             <View style={styles.conteudoBotoes}>
                 <View style={styles.conteudoTxt}>
@@ -41,7 +42,7 @@ const styles = StyleSheet.create({
     BotaoAnterior: {
         marginTop: 10,
         width: 300,
-        height: 71,
+        height: 80,
         backgroundColor: '#fff',
         borderRadius: 15,
         borderColor: '#000',
@@ -50,11 +51,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
-    compraAnterior: {
-        color: '#545454',
-        fontSize: 15,
-        marginRight: 20,
-    },
+
     conteudoBotoes: {
         flexDirection: 'row',
         alignItems: 'center',

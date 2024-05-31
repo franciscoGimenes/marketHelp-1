@@ -7,6 +7,7 @@ import { useNavigation } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { ModalAviso } from '../components/modalAviso';
 import Armazenamento from '../hooks/bancoCompras';
+import { useFonts } from 'expo-font';
 
 
 
@@ -17,7 +18,7 @@ export default function Bem_Vindo() {
 
   const navigation = useNavigation()
 
-
+  useFonts({ 'Gobold': require('../assets/fonts/Gobold Regular.otf') });
   
   function fecharModal() {
     configTelaModal(false);
@@ -166,11 +167,13 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 18,
     marginRight: 20,
+    fontFamily: 'Gobold'
   },
   comecarCompra: {
     color: '#545454',
     fontSize: 18,
     marginRight: 40,
+    fontFamily: 'Gobold'
   },
   conteudoBotoes: {
     flexDirection: 'row',

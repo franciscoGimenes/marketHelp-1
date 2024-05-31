@@ -4,6 +4,8 @@ import { View, Text, TouchableOpacity, StyleSheet, Modal, TextInput } from 'reac
 import { BlurView } from 'expo-blur';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Armazenamento from '../hooks/bancoCompras';
+import { useFonts } from 'expo-font';
+
 
 export function ModalProdutos({ fechar, visivel }) {
   const [nomeProduto, setNomeProduto] = useState('');
@@ -32,6 +34,9 @@ export function ModalProdutos({ fechar, visivel }) {
       setQuantidade(quantidade - 1);
     }
   }
+
+  useFonts({ 'Gobold': require('../assets/fonts/Gobold Regular.otf') });
+
 
   return (
     <Modal visible={visivel} animationType="fade" transparent={true}>
@@ -67,7 +72,7 @@ export function ModalProdutos({ fechar, visivel }) {
             </View>
           </View>
           <TouchableOpacity style={styles.botao} onPress={salvarProduto}>
-            <Text style={styles.textoBotao}>Salvar</Text>
+            <Text style={styles.textoBotao}>salvar</Text>
             <Icon name="check" size={20} color="#404E4D" />
           </TouchableOpacity>
         </View>
@@ -143,7 +148,9 @@ const styles = StyleSheet.create({
   },
   textoBotao: {
     color: '#404E4D',
-    fontWeight: 'bold',
+
     marginRight: 5,
+    fontFamily: 'Gobold'
+
   },
 });

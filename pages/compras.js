@@ -9,8 +9,12 @@ import { useNavigation } from '@react-navigation/native';
 import { useIsFocused } from '@react-navigation/native';
 import Armazenamento from '../hooks/bancoCompras';
 import { CaixaToken } from '../components/produtoView';
+import { useFonts } from 'expo-font';
+
 
 export default function Compras() {
+  useFonts({ 'Gobold': require('../assets/fonts/Gobold Regular.otf') });
+
   const navigation = useNavigation();
   const [telaModal, configTelaModal] = useState(false);
   const [telaModalBan, configTelaModalBan] = useState(false);
@@ -148,6 +152,7 @@ export default function Compras() {
         keyExtractor={(item, index) => String(index)}
         extraData={[listaValores, listaQuantidade]}
         scrollEnabled={true}
+        contentContainerStyle={styles.flatListContent}
         renderItem={({ item, index }) => (
           <CaixaToken
             token={item}
@@ -158,7 +163,8 @@ export default function Compras() {
         )}
       />
 
-      <StatusBar style="auto" />
+      <StatusBar         barStyle="light-content" 
+        backgroundColor="black"  />
     </LinearGradient>
   );
 }
@@ -167,7 +173,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'flex-start',
+    justifyContent: 'center',
   },
   header: {
     margin:40,
@@ -175,6 +181,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-around',
+    marginTop: 60,
   },
   imageHeader: {
     width: 50,
@@ -183,7 +190,7 @@ const styles = StyleSheet.create({
   BotaoAnterior: {
     marginTop: 40,
     width: 300,
-    height: 71,
+    height: 80,
     backgroundColor: '#FFC030',
     borderRadius: 15,
     padding: 10,
@@ -194,6 +201,8 @@ const styles = StyleSheet.create({
     color: '#545454',
     fontSize: 15,
     marginRight: 20,
+    fontFamily: 'Gobold'
+
   },
   conteudoBotoes: {
     flexDirection: 'row',
@@ -202,6 +211,11 @@ const styles = StyleSheet.create({
   FlatList: {
     flex: 1,
     width: '100%',
+  },
+  flatListContent: {
+
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   imagemCompra: {
     width: '100%',
