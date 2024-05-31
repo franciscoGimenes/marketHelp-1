@@ -15,8 +15,14 @@ export function ModalProdutos({ fechar, visivel }) {
   const { salvarItem } = Armazenamento();
 
   async function salvarProduto() {
+
+    let precoFormatado = preco;
+    if (preco.includes(',')) {
+      precoFormatado = preco.replace(',', '.');
+    }
+
       await salvarItem("@nome", nomeProduto);
-      await salvarItem("@valor", (quantidade * preco).toFixed(2));
+      await salvarItem("@valor", (quantidade * precoFormatado).toFixed(2));
       await salvarItem("@qtde", quantidade);
 
       setNomeProduto('')
@@ -54,7 +60,7 @@ export function ModalProdutos({ fechar, visivel }) {
           />
           <TextInput
             style={styles.input}
-            placeholder="Preço (use pontos para cents ex: 20.99)"
+            placeholder="Preço"
             value={preco}
             onChangeText={setPreco}
             keyboardType="numeric"
